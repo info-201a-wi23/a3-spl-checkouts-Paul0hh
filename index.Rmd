@@ -5,82 +5,41 @@ output: html_document
 
 ### Introduction
 
-An introduction of the data and a description of the trends/books/items you are choosing to analyze (and why!)
+Growing up, one of the best places to be was at the local library. However, as I got older and things began to get more and more digitized, I stopped going. Overtime, the libraries have seem to be used less and less each year. This data report will analyze the overall, physical, and digital checkout rates throughout the years to see how library usage has changed over time. Libraries are an important part of communities they service. Tracking their usage rates overtime can help improve these resources and predict future trends. 
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+To track library usage over the years, 6 values were analyzed. Highest_digital_year and highest_physical_year were used to analyze when the peak checkout rates for digital and physical books were. Prior to COVID 19, physical checkout rates ruled with the highest checkout year being 2017.But, As soon as COVID 19 hit, the physical checkout rates dropped. Because everything was on lock down, people were unable to go to the library and that was when digital checkout rates began to skyrocket. After lock down passed by, everyone had already switched to a digital and remote lifestyle. This lead to 2022 being the highest digital checkout year. People began to use digital library services over physical because it was more continent to get these materials online then in person. Analyzing at the total_digital_checkouts 8999132 and total_physical_checkouts 10166737, it is shown that the two numbers are close to each other and looking at both the physical and digital checkout charts, a trend shows that overtime digital checkout rates will surpass physical checkouts with digital checkouts having a drastically steep increase since the start of COVID 19.Even though physical books have been out longer than digital books, technology is growing at an extremely fast rate, digitizing our whole world and some day will take over all physical library services. Comparing these two values helps us predict what the future of how libraries might operate and what library resources be. Finally, comparing digital_resources(8) to physical_resources(25), Seattle Public Libraries have 17 more physical resources than digital. However, as states earlier, digital checkout rates are creeping up on physical. This could mean that in the future as everything becomes more digital, local communities will see more resources in the digital category,
 
-These will likely be calculated using your DPLYR skills, answering questions such as:
-
-- What is the average number of checkouts for each item?
-- What is the month or year with the most/least checkouts for a book that you're interested in?
-- What is the month or year with the most/least checkouts for ebooks?
-- How has the number of print book checkouts changed over time?
-
-Feel free to calculate and report values that you find relevant.
 
 ### The Dataset
 
-- Who collected/published the data?  
-- What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
-- How was the data collected or generated?  
-- Why was the data collected?  
-- What, if any, ethical questions do you need to consider when working with this data?  
-- What are possible limitations or problems with this data?   (at least 200 words)
+This data was collected by the Seattle Public Library and is updated monthly. The parameters collected for this data are UsageClass, CheckoutType, MaterialType, CheckoutYear, CheckoutMonth, Checkouts, Titles, ISBN, Creator, Subject, Publisher, and Publication year. This data was collected by going through checkout data every month. The reason this data was collected was the track checkout rates, types of checkouts, and genre/book trends throughout the year. An ethical question that may come up when using this data set is privacy rights. When it comes to tracking data, some people may not want their personal information such as the books they are reading or materials they are checking out to be available to the public. A problem with this data set is that not too much information is given about the checkout process and information on how the data was obtained. In regards to the ethical side, it is not said if users were notified that their checkout data is being shared. In regards to limitation of this data set, it is only constricted to checkout data from the Seattle Public Library area and no information is given neighboring regions. This leaves users analyzing the data to only be able to track data from one region. Another limitation is this data updates once a month. For cases of constant research, this limits the speed of research because the user has to wait every month for new data to be published. 
 
 
-### First Trends Over Time Chart
+### Physical vs Digital Checkouts
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The first chart that you will create and include will show the trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
+``````{r, echo = FALSE, message = FALSE, warning = FALSE, code = readLines("digital_vs_physical_checkout_by_the_year.R")}
 ```
 
-### Second Trends Over Time Chart
+This first chart shows the trends of physical checkouts and digital checkouts from 2017-2023. This a key piece of data to this analysis because it shows how the physical checkout trends dropped drastically in 2019 when COVID first hit (mostly due to the world being shut down) and the physical checkout rate has not recovered since. However, for the digital checkout trend, we can see that building up to COVID as the world got more and more digitized, the checkout rates grew at a steady rate. This helps track how the library is used over time and how even when the world was shut down, libraries were still providing for their communities. This also helps show that more digital programs can take over previous physical programs that were shut down during the knockdowns. Digital usage can bring many new resources to local communities. 
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
 
-The second chart that you will create and include will show another trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
 
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
+### Types of Checkouts
 
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+``````{r, echo = FALSE, message = FALSE, warning = FALSE, code = readLines("Checkout_type_per_year.R")}
 ```
 
-### Your Choice
+Looking over this second chart, it provides information on the five different types of library checkout types. Freegal is is a free service used by libraries to provide free music. Hoopla is a service use primarily to check out free television. Horizon is utilized by libraries as a physical checkout service. OverDrive is used when checkout eBooks. Finally, Zinio is a service used to check out magazines. These charts help show how different library services aged overtime. For things such as television, music, and magazines, these died out around 2018. This is partially due to our advances in technology such as social media which has taken over magazines, Spoitfy/apple music which has taken over Freegal, and Youtube/Netflix which has taken over Hoopla. The five charts help show which library resources are becoming outdated and need to be improved or removed. These results also show that digital services are slowly taking over physical services as those continue to decline post COVID.   
 
-The last chart is up to you. It could be a line plot, scatter plot, histogram, bar plot, stacked bar plot, and more. Here are some requirements to help guide your design:
 
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
 
-Here's an example of how to run an R script inside an RMarkdown file:
+### Total Checkouts Over the Years
 
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+``````{r, echo = FALSE, message = FALSE, warning = FALSE, code = readLines("checkout_by_the_year.R")}
 ```
+
+Lastly, this final chart shows Seattle Public Library overall checkout rates which correlates to utilization rates over time. This was important to track because when comparing the two methods of physical and digital checkout rates, it might seem like overall library checkout rates are just diminishing which might seem like library usage is just going way down. However, that is not that case because as physical rates went down, digital rates went up and balances out the scales. Looking at the overall checkout rates, it shows that Library usage is still as good as ever. The only reason there was a slight drop between 2019 and 2020 was due to COVID. During that time, the world shut down and people had to get use to this new world. However, when libraries shut down, COVID brought the biggest wave of new Ebook users and readers! This helps showcase that even during a pandemic, the library is still a helpful resource to our community, Finally, as for the sudden drop in overall checkouts from 2022 to 2023, this is due to data only being collected from January 2023. 
 
 
